@@ -1,0 +1,45 @@
+*{
+    font-family: sans-serif;
+    background-color: azure;
+}
+legend{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px ;
+    font-weight: 600;
+    padding: 20px 5px;
+}
+form{
+    border: 3px solid lightslategray;
+    width: 80%;
+    margin: 25px auto;
+    padding: 5px 30px ;
+
+}
+.name-field{
+    display: flex;
+    
+}
+label{
+    display: block;
+    margin-bottom: 8px;
+}
+a{
+    color:blue;
+}
+/* **************************** */
+/* Terms and condition page */
+.terms-main-head{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    padding: 10px;
+}
+.terms-sub-head{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 1px 20px;
+}
+.terms-para{
+    font-family:  serif;
+    font-size: 18px;
+    padding: 1px 20px;
+}

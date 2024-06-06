@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   
+    
+    <form action="success.html" method="GET">
+        <legend>Registration Form</legend>
+
+       
+
+        <div class="name-field">
+             <label for="e_first_name"> Full name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--First&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                <input 
+                name="e_first_name" 
+                id="e_first_name" 
+                type="text" 
+                required 
+                placeholder="First name">
+            </label>
+
+            <label for="e_last_name"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input 
+                name="e_last_name"
+                id="e_last_name" 
+                type="text" required 
+                placeholder="Last name">
+            </label>
+        </div>
+       
+        <label for="e_email">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input 
+            name="e_email" 
+            id="e_email" 
+            type="email" 
+            required 
+            placeholder="example@gmail.com">
+        </label>
+        
+        <label for="e_pass">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+            name="e_pass"
+            id="e_pass"
+            type="password"
+            required
+            placeholder="password"
+            oninput="validatePasswords()">
+        </label>
+
+        <label for="e_confirm_pass">Confirm password:&nbsp;
+            <input
+            name="e_confirm_pass"
+            id="e_confirm_pass"
+            type="password"
+            required
+            placeholder="confirm password"
+            oninput="validatePasswords()">
+        </label>
+
+        <label for="e_date">Dat of birth:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+            name="e_date"
+            id="e_date"
+            type="date"
+            required
+            value="2025-05-02">
+        </label>
+        <!-- value is used to set a predefined value but it is changeable-->
+
+
+        <div>
+            <p>Select Gender:</p>
+            <!-- Radio Buttons -->
+            <label for="e_male">
+                <input
+                name="e_gender"
+                id="e_male"
+                type="radio"
+                value="Male"> Male
+            </label>
+            <label for="e_female">
+                <input
+                name="e_gender"
+                id="e_female"
+                type="radio"
+                value="Female"> Female
+            </label>
+            <label for="e_others">
+                <input
+                name="e_gender"
+                id="e_others"
+                type="radio"
+                value="Others"> Others
+            </label>
+            <!--here both the radio buttons have save name so it grouped .Only one can be selected-->
+        </div>
+
+        <section class="terms">
+            <label for="e_terms">
+                <input
+                name="e_terms"
+                id="e_terms"
+                type="checkbox"
+                required> 
+                <a href="terms.html" target="_blank">Terms and conditions
+                </a>
+            </label>
+            <p><small>
+                accept the terms and conditions to complete the registration process
+            </small></p>
+            
+        </section>
+
+        <button id="submit-button" disabled>Sign up</button>
+
+    </form>
+
+    <script>
+        function validatePasswords() {
+            const passwordInput = document.getElementById('e_pass');
+            const confirmInput = document.getElementById('e_confirm_pass');
+            const submitButton = document.getElementById('submit-button');
+        
+            if (passwordInput.value === confirmInput.value) {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', 'true');
+            }
+        }
+        
+        function handleSignUp() {
+            const passwordInput = document.getElementById('e_pass');
+            const confirmInput = document.getElementById('e_confirm_pass');
+        
+            if (passwordInput.value !== confirmInput.value) {
+                alert('Passwords do not match. Please try again.');
+            } else {
+                // Handle form submission or other actions here
+                // For example: submit the form via AJAX or redirect to a success page
+            }
+        }
+        </script>
+</body>
+</html>
